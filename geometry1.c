@@ -25,7 +25,11 @@ int main()
     int n, j = 0, k = 0;
     double p1, p2;
     printf("How many figures do you want?\n");
-    scanf("%d", &n);
+    int status = scanf("%d", &n);
+    if (status != 1) {
+	printf("Incorrect data entered\n");
+    	return 1;
+    }
     char t[80]= "triangle";
     char c[80] = "circle";
     struct triangle tri[n];
